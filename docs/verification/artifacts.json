@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-05",
+  "git_head": "0cda421f8ff1c1bd28e0077f7af05757266e859b",
+  "source_state": "uncommitted local build; no publication",
+  "artifacts": [
+    {
+      "path": "dist/tomlgraft-0.1.0-cp312-cp312-linux_x86_64.whl",
+      "bytes": 1611872,
+      "sha256": "7b3ee45614805e58b96df028a25eb632ebc13a0664a437ec91912b745267b4fa"
+    },
+    {
+      "path": "dist/tomlgraft-0.1.0-cp312-cp312-win_amd64.whl",
+      "bytes": 1479171,
+      "sha256": "79382583477a786f405db0249b9b396cd1c1509b9798b37422f384e58aac35f5"
+    },
+    {
+      "path": "dist/tomlgraft-0.1.0.tar.gz",
+      "bytes": 42527,
+      "sha256": "84c1dbe0894c6ee02aeb52c48dc1e9d8c0e24b4f4feea8fc67fad99fc296d9a9"
+    },
+    {
+      "path": "target/package/tomlgraft-0.1.0.crate",
+      "bytes": 18004,
+      "sha256": "22842ce86269052a116ee4430d53ee7af6f2a971463af7b578f714250ba00ef8"
+    },
+    {
+      "path": "target/package/tomlgraft-core-0.1.0.crate",
+      "bytes": 34185,
+      "sha256": "b1082c0e9c3695d9bf9fc34028f4027d80c21b384041d43bc40d4d641e11f178"
+    },
+    {
+      "path": "target/release/tomlgraft.exe",
+      "bytes": 4210688,
+      "sha256": "edae1c9a5859268d28a242bd09ee373d34786e2acd381845ba5f0e579c54f6e9"
+    }
+  ],
+  "sources": [
+    {
+      "path": "Cargo.toml",
+      "bytes": 644,
+      "sha256": "454b558ccff8d53a65bcd77ef65550b5b0040e358d309831e7b01129c127bd65"
+    },
+    {
+      "path": "Cargo.lock",
+      "bytes": 29458,
+      "sha256": "b66d02fcf1923ec3dbb0d73c6108437f15e90a094f3808bc78d43db9a9059427"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 687,
+      "sha256": "60d9bedfc63fb7ab875207c83da0875822c4f27e9d23510981d7fcfb49673958"
+    },
+    {
+      "path": "README.md",
+      "bytes": 10444,
+      "sha256": "3e2fc924a40f0ab4f32f97ff53c55004ffd8969b40fcee46edc5ab0e5bd03b5a"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "crates/tomlgraft-cli/src/main.rs",
+      "bytes": 7355,
+      "sha256": "bf05647da5192bb654e095ae899c3077603f4a019fa503a2ae3eb40a6ce5386e"
+    },
+    {
+      "path": "crates/tomlgraft-cli/tests/cli.rs",
+      "bytes": 7186,
+      "sha256": "cb7566738bcf306041db13372afdf77170e52f5aa470cd480bcd9dec36435d3e"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/dependency.rs",
+      "bytes": 14381,
+      "sha256": "856e589618d7e6c4133ba5d202ff8966f970470910f4d3c5c643c5cb82b49424"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/edit.rs",
+      "bytes": 9110,
+      "sha256": "93bf0075dac875cba983cd8048ce368db245f7fb84852ce38f599ad303a3a0e5"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/file.rs",
+      "bytes": 12131,
+      "sha256": "cf011129d1a7439d402b5bd939029856cc693b5d23aec9f218f3de3af7df194a"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/file_linux.rs",
+      "bytes": 3977,
+      "sha256": "7991b6d8ea1fd76e5859740349c67cdcc9b8fd82574c4ef0231a66bbf1487ea0"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/file_unsupported.rs",
+      "bytes": 810,
+      "sha256": "23a92911dbee57023554de70ba502443d842fd2269141676fd11c5e93c0cfbe6"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/file_windows.rs",
+      "bytes": 11531,
+      "sha256": "c81d697d044f1978c14244fc9c346362b3ae2f1e4b6f100bd769efc6817b6988"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/lib.rs",
+      "bytes": 13841,
+      "sha256": "0623445f00eced68ea1dfd91a2fe6f07e50c4c0bd280ffed6c735d4cb659084c"
+    },
+    {
+      "path": "crates/tomlgraft-core/src/script.rs",
+      "bytes": 8989,
+      "sha256": "38f0ba5abe6f5206b5ae1409b9ba0239d5bd5cb6c4b17105848780e64b8eec9d"
+    },
+    {
+      "path": "crates/tomlgraft-core/tests/core.rs",
+      "bytes": 16305,
+      "sha256": "2ef92379cf66d692ce3132a91d45159bd9c17d088bcceb3e39b8014c42288ef8"
+    },
+    {
+      "path": "crates/tomlgraft-core/tests/spans.rs",
+      "bytes": 1120,
+      "sha256": "dd58a15bccf3f13182a35d0bd705610f1386c68b89acb5a62e0b19b26419905e"
+    },
+    {
+      "path": "crates/tomlgraft-py/src/lib.rs",
+      "bytes": 4873,
+      "sha256": "3c61bea9e8cc3e94174ef41ceff7b12a0eadae831d71237bbbe51f44395a1b6b"
+    },
+    {
+      "path": "crates/tomlgraft-cli/Cargo.toml",
+      "bytes": 504,
+      "sha256": "f77d53a6f7dcc90c328b6f21b964081b77b6c692f2c7de561b815f2394c9beae"
+    },
+    {
+      "path": "crates/tomlgraft-core/Cargo.toml",
+      "bytes": 853,
+      "sha256": "cfe6e9deb460527bb3e584ba913ff661a790b5cba4957b213a10b9d2736be206"
+    },
+    {
+      "path": "crates/tomlgraft-py/Cargo.toml",
+      "bytes": 390,
+      "sha256": "de43412ba504c95bfbec2a2b0ebe453113947abe5483d8af521dcf66069dd933"
+    },
+    {
+      "path": "python/tomlgraft/__init__.py",
+      "bytes": 398,
+      "sha256": "569d233eaba3262dbf02a8591ec1daf96d94922c1ea5ca41cc9cc11e9d29a20a"
+    },
+    {
+      "path": "python/tomlgraft/__init__.pyi",
+      "bytes": 861,
+      "sha256": "c1ce488e57bd37ac613c617ea799b6d2f885dd84c752a1881e38eef5dc92d44b"
+    }
+  ]
+}

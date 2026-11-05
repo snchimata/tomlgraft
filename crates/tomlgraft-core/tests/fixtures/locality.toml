@@ -1,0 +1,15 @@
+# Leading comment
+"a.b".x = 0x10 # scalar comment
+"a.b".y = 'unchanged'
+
+[tool."example.org"]
+enabled = true
+config = { nested = { x = 1 }, keep = 'literal' }
+date = 1979-05-27
+
+[project]
+dependencies = [
+    'example[extra]>=1', # associated
+    # standalone
+    'other; python_version < "3.12"',
+]

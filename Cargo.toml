@@ -1,0 +1,23 @@
+[workspace]
+members = ["crates/tomlgraft-core", "crates/tomlgraft-cli", "crates/tomlgraft-py"]
+default-members = ["crates/tomlgraft-core", "crates/tomlgraft-cli"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.89"
+license = "Apache-2.0"
+repository = "https://github.com/snchimata/tomlgraft"
+homepage = "https://github.com/snchimata/tomlgraft"
+
+[workspace.dependencies]
+tomlgraft-core = { path = "crates/tomlgraft-core", version = "=0.1.0" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = "=1.0.154"
+toml_edit = { version = "=0.25.18", features = ["serde"] }
+pep508_rs = "=0.9.2"
+tempfile = "=3.27.0"
+
+[profile.release]
+strip = true

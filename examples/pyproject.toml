@@ -1,0 +1,13 @@
+[project]
+name = "tomlgraft-demo"
+version = '1.0.0' # Keep this release comment.
+requires-python = ">=3.12"
+dependencies = [
+    'requests>=2', # Keep this dependency comment.
+]
+
+[dependency-groups]
+dev = ['pytest>=7']
+
+[tool.demo]
+enabled = true

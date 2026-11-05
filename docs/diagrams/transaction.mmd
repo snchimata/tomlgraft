@@ -1,0 +1,11 @@
+flowchart LR
+    accTitle: Prepare once, preview or commit
+    accDescr: Validation prepares the whole batch. An unchanged result keeps the original; previews only report changes. A write stages and syncs, rechecks the target, then replaces it and reports commit state and durability.
+    prepare["Prepare and validate<br/>the whole batch"] --> changed{"Changed?"}
+    changed -->|No| keep["Keep original bytes<br/>and target mtime"]
+    changed -->|Preview| preview["Report would_change<br/>No sidecar or tempfile"]
+    changed -->|Write| stage["Stage and sync<br/>under the file lock"]
+    stage --> replace["Recheck target<br/>and atomically replace"]
+    replace --> report["Report commit state<br/>and durability"]
+    classDef focus fill:#e6f2ea,stroke:#277347,color:#173d27,stroke-width:2px
+    class prepare,replace focus

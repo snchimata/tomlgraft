@@ -1,0 +1,10 @@
+flowchart LR
+    accTitle: One editing core across all interfaces
+    accDescr: Rust, the command line, and Python share one core. A validated patch returns owned bytes or goes through the shared locked file writer.
+    client["Rust · CLI · Python"] --> core["Shared editing core"]
+    core --> patch["Validated patch"]
+    patch --> bytes["Owned output bytes"]
+    patch --> writer["Locked file writer"]
+    writer --> file["Atomic replacement"]
+    classDef focus fill:#e6f2ea,stroke:#277347,color:#173d27,stroke-width:2px
+    class core focus
