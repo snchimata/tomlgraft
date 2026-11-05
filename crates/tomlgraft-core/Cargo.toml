@@ -1,0 +1,31 @@
+[package]
+name = "tomlgraft-core"
+description = "Local, transactional TOML edits with bounded preservation guarantees"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+documentation = "https://docs.rs/tomlgraft-core"
+keywords = ["toml", "editing", "pyproject", "pep723"]
+categories = ["config", "parser-implementations"]
+readme = "README.md"
+include = ["src/**", "examples/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[dependencies]
+toml_edit.workspace = true
+pep508_rs.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tempfile.workspace = true
+similar = "=3.2.1"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "=0.61.2", features = ["Win32_Foundation", "Win32_Storage_FileSystem", "Win32_Security", "Win32_Security_Authorization", "Win32_System_SystemServices", "Win32_System_WindowsProgramming"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+libc = "=0.2.186"
+
+[dev-dependencies]
+proptest = "=1.12.0"

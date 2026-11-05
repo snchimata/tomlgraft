@@ -1,0 +1,68 @@
+name: build-and-test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        default: ""
+permissions:
+  contents: read
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-22.04, windows-2022]
+        rust: ["1.89.0", "1.97.0"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: "3.12"
+      - name: Install pinned Rust
+        run: |
+          rustup toolchain install ${{ matrix.rust }} --profile minimal --component clippy --component rustfmt
+          rustup default ${{ matrix.rust }}
+      - run: cargo fmt --all -- --check
+      - run: cargo clippy --workspace --all-targets --locked -- -D warnings
+      - run: cargo test --workspace --locked
+      - run: cargo run --locked -p tomlgraft-core --example patch
+      - run: python scripts/release.py
+      - run: cargo build --release --locked -p tomlgraft
+      - run: python -m pip install maturin==1.13.1 packaging==26.3
+      - run: python -m maturin build --release --locked --out dist
+      - name: Install wheel and test bindings
+        shell: bash
+        run: |
+          python -m pip install --no-deps dist/*.whl
+          export TOMLGRAFT_CLI="$GITHUB_WORKSPACE/target/release/tomlgraft"
+          if [[ "$RUNNER_OS" == Windows ]]; then export TOMLGRAFT_CLI="$TOMLGRAFT_CLI.exe"; fi
+          python -m unittest discover -s tests -v
+          python examples/patch.py
+      - if: runner.os == 'Windows'
+        shell: pwsh
+        run: ./tests/smoke.ps1 -Cli ./target/release/tomlgraft.exe
+      - name: Install release packaging toolchain
+        if: matrix.rust != '1.97.0'
+        run: rustup toolchain install 1.97.0 --profile minimal
+      - name: Package unpublished workspace crates
+        env:
+          RUSTUP_TOOLCHAIN: "1.97.0"
+        run: cargo package --workspace --exclude tomlgraft-py --allow-dirty --locked
+      - name: Build source distribution
+        env:
+          RUSTUP_TOOLCHAIN: "1.97.0"
+        run: python -m maturin sdist --out dist
+      - run: python tests/check_artifacts.py
+      - name: Dependency advisories
+        if: matrix.os == 'ubuntu-22.04' && matrix.rust == '1.97.0'
+        run: |
+          cargo install cargo-audit --version 0.22.2 --locked
+          cargo audit --deny warnings

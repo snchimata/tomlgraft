@@ -1,0 +1,36 @@
+[build-system]
+requires = ["maturin==1.13.1"]
+build-backend = "maturin"
+
+[project]
+name = "tomlgraft"
+version = "0.1.0"
+description = "Small, transactional TOML edits backed by a shared Rust core"
+readme = "python/README.md"
+requires-python = ">=3.12,<3.13"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+keywords = ["toml", "pyproject", "pep723", "configuration"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Rust",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Repository = "https://github.com/snchimata/tomlgraft"
+Documentation = "https://github.com/snchimata/tomlgraft#readme"
+Issues = "https://github.com/snchimata/tomlgraft/issues"
+Changelog = "https://github.com/snchimata/tomlgraft/blob/main/CHANGELOG.md"
+
+[tool.maturin]
+manifest-path = "crates/tomlgraft-py/Cargo.toml"
+python-source = "python"
+module-name = "tomlgraft._native"
+features = ["pyo3/extension-module"]
+include = [{path = "LICENSE", format = "sdist"}, {path = "Cargo.lock", format = "sdist"}]
+exclude = ["**/tests/**", "docs/**", ".codex/**", ".github/**"]

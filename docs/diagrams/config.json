@@ -1,0 +1,16 @@
+{
+  "theme": "base",
+  "htmlLabels": false,
+  "themeVariables": {
+    "fontFamily": "Arial, sans-serif",
+    "fontSize": "17px",
+    "primaryColor": "#f7f8fa",
+    "primaryTextColor": "#24292f",
+    "primaryBorderColor": "#8c959f",
+    "lineColor": "#57606a",
+    "secondaryColor": "#ffffff",
+    "tertiaryColor": "#ffffff"
+  },
+  "themeCSS": ".node rect, .node polygon { filter: none !important; } .nodeLabel, .edgeLabel { font-family: Arial, sans-serif !important; }",
+  "flowchart": {"htmlLabels": false, "curve": "linear", "padding": 18, "nodeSpacing": 30, "rankSpacing": 40}
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "operations": [
+    {"op": "set", "path": ["project", "version"], "value_toml": "'1.1.0'"},
+    {"op": "dep_upsert", "scope": {"kind": "group", "name": "dev"}, "requirement": "pytest>=8"},
+    {"op": "set", "path": ["tool", "demo", "enabled"], "value_toml": "false"}
+  ]
+}

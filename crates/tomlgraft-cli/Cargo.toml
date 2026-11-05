@@ -1,0 +1,25 @@
+[package]
+name = "tomlgraft"
+description = "Small, reviewable TOML edits"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+homepage.workspace = true
+keywords = ["toml", "cli", "pyproject", "pep723"]
+categories = ["command-line-utilities", "config"]
+readme = "README.md"
+include = ["src/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[[bin]]
+name = "tomlgraft"
+path = "src/main.rs"
+
+[dependencies]
+tomlgraft-core.workspace = true
+clap = { version = "=4.6.7", features = ["derive"] }
+serde_json.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
