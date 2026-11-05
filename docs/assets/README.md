@@ -33,4 +33,3 @@ Composition: left two-thirds contain a large lowercase wordmark "tomlgraft" in a
 Text (verbatim): "tomlgraft"; "Small edits. Clean diffs."; "TOML  /  RUST  /  CLI  /  PYTHON".
 Constraints: one complete finished banner, no mockup, no presentation board, no extra logos, no performance claims, no badges, no additional text, no watermark, no photographic textures, no 3D, no dramatic gradients or glow. Background must be opaque ivory.
 ```
-
