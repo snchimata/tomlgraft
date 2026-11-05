@@ -77,6 +77,22 @@ lock has 10,000 lines. `tests/measure.py` checks successful reports and unchange
 preview inputs. CLI rows include fresh process creation, I/O, and JSON output;
 Python rows include the owned binding conversion and preparation.
 
+All times below are milliseconds. Python preparation excludes file I/O.
+
+| Workload | Windows median | Windows p95 | Linux / WSL2 median | Linux / WSL2 p95 |
+| --- | ---: | ---: | ---: | ---: |
+| CLI · manifest · no-op | 4.835 | 5.504 | 1.109 | 1.286 |
+| CLI · manifest · preview | 5.630 | 7.193 | 1.098 | 1.223 |
+| CLI · manifest · preview + diff | 4.893 | 5.707 | 1.154 | 1.313 |
+| CLI · manifest · file write | 8.008 | 9.333 | 3.897 | 4.700 |
+| Python · manifest · prepare | 0.087 | 0.098 | 0.083 | 0.192 |
+| CLI · script · no-op | 4.792 | 5.506 | 1.014 | 1.059 |
+| CLI · script · preview | 4.637 | 4.949 | 1.075 | 1.279 |
+| CLI · script · preview + diff | 4.707 | 5.373 | 1.073 | 1.213 |
+| CLI · script · file write | 7.757 | 8.403 | 3.980 | 4.500 |
+| Python · script · prepare | 0.030 | 0.045 | 0.027 | 0.060 |
+| CLI · lock · structural check | 14.756 | 18.901 | 11.669 | 13.035 |
+
 Filesystem cache is warm/uncontrolled. New processes do not imply cold storage.
 Windows write rows report uncertain directory durability; Linux write rows
 sync the parent. These local rows are not interchangeable clocks, portability
