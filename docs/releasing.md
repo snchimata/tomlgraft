@@ -1,6 +1,6 @@
 # Releasing tomlgraft
 
-Prepared version: **0.1.0**, initial experimental release. No package or GitHub
+Prepared version: **0.1.1**, documentation patch release. No package or GitHub
 release is published by opening a PR, merging it, or pushing a tag. The release
 workflow is manual, and each destination is off by default.
 
@@ -32,7 +32,7 @@ token for the two crate names as the `CARGO_REGISTRY_TOKEN` secret in the
 `crates-io` GitHub environment. Do not put tokens in files, commands, or PRs.
 See [Cargo publishing](https://doc.rust-lang.org/cargo/reference/publishing.html).
 
-For PyPI, add a pending trusted publisher for the initially unregistered project:
+For PyPI, configure a trusted publisher for the project:
 
 | Setting | Value |
 | --- | --- |
@@ -57,21 +57,21 @@ their presence in YAML as evidence that publisher credentials are ready.
 1. Merge the reviewed release PR only after its exact commit passes CI. The
    workflow tests Rust 1.89/1.97, Windows/Linux, examples, package contents, and
    Python bindings. Dependency advisories fail the designated Linux job.
-2. Check `CHANGELOG.md`, `docs/releases/v0.1.0.md`, the supported matrix, and
+2. Check `CHANGELOG.md`, `docs/releases/v0.1.1.md`, the supported matrix, and
    current registry-name availability. A 404 check does not reserve a name.
 3. Create an annotated tag on that reviewed `main` commit:
 
    ```sh
    git switch main
    git pull --ff-only
-   git tag -a v0.1.0 -m "tomlgraft v0.1.0"
-   git push origin v0.1.0
+   git tag -a v0.1.1 -m "tomlgraft v0.1.1"
+   git push origin v0.1.1
    ```
 
 4. Run the manual workflow with all publishing switches left false:
 
    ```sh
-   gh workflow run release.yml --ref main -f tag=v0.1.0
+   gh workflow run release.yml --ref main -f tag=v0.1.1
    ```
 
 The workflow verifies version/tag equality and main ancestry, repeats CI for
@@ -95,7 +95,7 @@ Cargo examples are included; runtime test fixtures are excluded.
 After account setup and artifact review, explicitly choose the destinations:
 
 ```sh
-gh workflow run release.yml --ref main -f tag=v0.1.0 \
+gh workflow run release.yml --ref main -f tag=v0.1.1 \
   -f publish_crates=true -f publish_pypi=true -f publish_github=true
 ```
 

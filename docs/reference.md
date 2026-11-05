@@ -159,20 +159,20 @@ python -m maturin build --release --locked --out dist
 
 ## Release installation
 
-Install v0.1.0:
+Install v0.1.1:
 
 ```sh
 # CLI
-cargo install tomlgraft --version 0.1.0 --locked
+cargo install tomlgraft --version 0.1.1 --locked
 
 # Python binding: CPython 3.12
-python -m pip install tomlgraft==0.1.0
+python -m pip install tomlgraft==0.1.1
 ```
 
-The [GitHub prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.0)
+The [GitHub prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.1)
 provides Windows/Linux x86-64 CLI archives, wheels, and SHA-256 checksums.
 Linux release artifacts require glibc 2.35+. The Python package provides the
-binding; install the CLI separately. [Release notes](releases/v0.1.0.md).
+binding; install the CLI separately. [Release notes](releases/v0.1.1.md).
 
 ## Verify
 

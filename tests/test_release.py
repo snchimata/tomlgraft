@@ -21,7 +21,7 @@ class ReleaseTests(unittest.TestCase):
             self.assertFalse(root.findall(".//svg:foreignObject", namespace))
 
     def test_versions_and_tag_mismatch(self):
-        self.assertEqual(release.version(), "0.1.0")
+        self.assertEqual(release.version(), "0.1.1")
         with self.assertRaises(ValueError):
             release.check_tag("../../main", release.version())
 

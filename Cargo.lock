@@ -939,7 +939,7 @@ checksum = "009dbb7700f11c55ef83aebbe4c0e9cf1f1ac0844bd8d6f00dc38f302026e13a"
 
 [[package]]
 name = "tomlgraft"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "clap",
  "serde_json",
@@ -949,7 +949,7 @@ dependencies = [
 
 [[package]]
 name = "tomlgraft-core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "libc",
  "pep508_rs",
@@ -964,7 +964,7 @@ dependencies = [
 
 [[package]]
 name = "tomlgraft-py"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "pyo3",
  "serde_json",
