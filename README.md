@@ -40,24 +40,23 @@ to apply it with the [atomic file writer](#file-transactions).
 
 ## Installation
 
-From a source checkout, install the CLI with Rust 1.89+:
+Install the CLI with Rust 1.89+:
 
 ```sh
-cargo install --path crates/tomlgraft-cli --locked
+cargo install tomlgraft --version 0.1.0 --locked
 ```
 
-For the Python binding, build a wheel with CPython 3.12 and a Rust compiler/platform
-linker, then install the matching wheel from `dist/`:
+Install the Python binding with CPython 3.12:
 
 ```sh
-python -m pip install maturin==1.13.1
-python -m maturin build --release --locked --out dist
-# python -m pip install dist/<matching-wheel>.whl
+python -m pip install tomlgraft==0.1.0
 ```
 
-The Python package provides the binding; install the CLI separately.
-[Release notes](docs/releases/v0.1.0.md) describe planned binaries and wheels;
-[registry installation](docs/reference.md#release-installation) applies once published.
+The Python package provides the binding; install the CLI separately. Prebuilt
+CLI archives, wheels, and SHA-256 checksums are available in the
+[v0.1.0 prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.0).
+Wheels support Windows/Linux x86-64; Linux release artifacts require glibc 2.35+.
+See [source builds](docs/reference.md#build) and [release notes](docs/releases/v0.1.0.md).
 
 ## Why tomlgraft
 

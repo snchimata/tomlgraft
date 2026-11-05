@@ -157,12 +157,9 @@ python -m maturin build --release --locked --out dist
 # Install the matching wheel from dist/.
 ```
 
-Registry names are not reserved until publication. The commands above describe
-source installation; registry installation is prepared for a future release.
-
 ## Release installation
 
-After v0.1.0 is published:
+Install v0.1.0:
 
 ```sh
 # CLI
@@ -172,8 +169,8 @@ cargo install tomlgraft --version 0.1.0 --locked
 python -m pip install tomlgraft==0.1.0
 ```
 
-The prepared [GitHub release](https://github.com/snchimata/tomlgraft/releases)
-targets Windows/Linux x86-64 CLI archives, wheels, and SHA-256 checksums.
+The [GitHub prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.0)
+provides Windows/Linux x86-64 CLI archives, wheels, and SHA-256 checksums.
 Linux release artifacts require glibc 2.35+. The Python package provides the
 binding; install the CLI separately. [Release notes](releases/v0.1.0.md).
 

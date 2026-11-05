@@ -1,8 +1,8 @@
 # Changelog
 
-## [0.1.0] - Unreleased
+## [0.1.0] - 2026-11-05
 
-Initial experimental release, pending publication.
+Initial experimental release.
 
 - Shared Rust core, CLI, and CPython 3.12 bindings.
 - Source-span leaf edits, typed no-op equality, ordered JSON batches and rollback.
