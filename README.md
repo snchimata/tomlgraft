@@ -30,6 +30,7 @@ binding; install the CLI separately. [Release procedure](docs/releasing.md).
 ## Build
 
 Rust 1.89+; dependencies are pinned in `Cargo.lock`.
+Release packaging uses Cargo 1.97 to stage the initially unpublished crates.
 
 ```sh
 cargo test --workspace --locked
@@ -241,5 +242,5 @@ Python tests require the installed wheel and `packaging==26.3`. Set
 `tests/smoke.ps1` verifies PowerShell examples. CI covers Rust 1.89/1.97 and
 Windows/Linux with CPython 3.12; hosted CI is distinct from local evidence.
 
-[Changelog](CHANGELOG.md) ? [Release guide](docs/releasing.md) ?
-[Local verification](docs/verification/build-test.md) ? [Diagram sources](docs/diagrams)
+[Changelog](CHANGELOG.md) | [Release guide](docs/releasing.md) |
+[Local verification](docs/verification/build-test.md) | [Diagram sources](docs/diagrams)

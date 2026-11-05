@@ -17,6 +17,11 @@ auditing. Linux CLI binaries require glibc 2.35+. This scope does not promise
 static linkage, macOS/ARM support, other Python versions, or power-loss safety.
 See the [file contract](../README.md#file-transactions).
 
+Rust 1.89 remains the build/test minimum. Release packaging uses Cargo 1.97:
+older Cargo cannot stage the initial unpublished core dependency while
+packaging the CLI. The CI minimum-version builds, tests, examples, and wheels
+still run with Rust 1.89 before packaging switches toolchains.
+
 ## One-time account setup
 
 The repository must have Actions enabled. The workflow requests write access

@@ -44,3 +44,8 @@ The release retains Windows directory-durability uncertainty, bounded layout
 and metadata support, and the noncooperating-editor race. Physical power-loss,
 macOS/ARM, other Python versions, and universal preservation remain outside
 this release. See the [release guide](../releasing.md) for the exact procedure.
+
+The first hosted run exposed Cargo 1.89's inability to package the CLI against
+the still-unpublished core. Source tests and wheels passed on that toolchain.
+CI now performs only release packaging with Cargo 1.97, retaining the 1.89
+compiler checks. Official action pins use their current Node 24 releases.
