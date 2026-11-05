@@ -5,7 +5,7 @@ on:
       tag:
         description: Existing reviewed tag on main, matching package versions
         required: true
-        default: v0.1.0
+        default: v0.1.1
         type: string
       publish_github:
         description: Publish the GitHub prerelease and verified assets

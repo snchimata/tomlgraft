@@ -3,13 +3,12 @@
 A local CLI for small TOML, `pyproject.toml`, and PEP 723 metadata edits.
 
 ```sh
-cargo install tomlgraft --version 0.1.0 --locked
+cargo install tomlgraft --version 0.1.1 --locked
 tomlgraft set pyproject.toml project.version '"1.1.0"' --dry-run --diff
 tomlgraft dep add pyproject.toml 'pytest>=8' --group dev
 tomlgraft check pylock.toml --format json
 ```
 
-Registry installation becomes available after the v0.1.0 release is published.
 On PowerShell, pass the TOML literal string as `"'1.1.0'"`.
 Versioned JSON batches support ordered, atomic edits and stdin. `--check` on
 mutation exits 6 when a change is needed. Runtime errors support JSON reports

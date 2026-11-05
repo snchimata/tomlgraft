@@ -43,20 +43,20 @@ to apply it with the [atomic file writer](#file-transactions).
 Install the CLI with Rust 1.89+:
 
 ```sh
-cargo install tomlgraft --version 0.1.0 --locked
+cargo install tomlgraft --version 0.1.1 --locked
 ```
 
 Install the Python binding with CPython 3.12:
 
 ```sh
-python -m pip install tomlgraft==0.1.0
+python -m pip install tomlgraft==0.1.1
 ```
 
 The Python package provides the binding; install the CLI separately. Prebuilt
 CLI archives, wheels, and SHA-256 checksums are available in the
-[v0.1.0 prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.0).
+[v0.1.1 prerelease](https://github.com/snchimata/tomlgraft/releases/tag/v0.1.1).
 Wheels support Windows/Linux x86-64; Linux release artifacts require glibc 2.35+.
-See [source builds](docs/reference.md#build) and [release notes](docs/releases/v0.1.0.md).
+See [source builds](docs/reference.md#build) and [release notes](docs/releases/v0.1.1.md).
 
 ## Why tomlgraft
 
@@ -217,5 +217,5 @@ editors can race the final recheck/rename. After interrupted or lost output,
 reread the target before retrying.
 
 [Technical reference](docs/reference.md) · [Changelog](CHANGELOG.md) ·
-[Release notes](docs/releases/v0.1.0.md) · [Local verification](docs/verification/build-test.md) ·
+[Release notes](docs/releases/v0.1.1.md) · [Local verification](docs/verification/build-test.md) ·
 [Diagram sources](docs/diagrams) · [Logo and banner](docs/assets/README.md)
