@@ -3,6 +3,7 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+import xml.etree.ElementTree as ET
 
 spec = importlib.util.spec_from_file_location("release", Path(__file__).resolve().parents[1] / "scripts/release.py")
 release = importlib.util.module_from_spec(spec)
@@ -10,6 +11,15 @@ spec.loader.exec_module(release)
 
 
 class ReleaseTests(unittest.TestCase):
+    def test_readme_diagrams_have_accessible_svg_text(self):
+        namespace = {"svg": "http://www.w3.org/2000/svg"}
+        for name in ("architecture", "transaction"):
+            root = ET.parse(release.ROOT / "docs" / "diagrams" / f"{name}.svg")
+            self.assertTrue(root.find("svg:title", namespace).text)
+            self.assertTrue(root.find("svg:desc", namespace).text)
+            self.assertTrue(root.findall(".//svg:text", namespace))
+            self.assertFalse(root.findall(".//svg:foreignObject", namespace))
+
     def test_versions_and_tag_mismatch(self):
         self.assertEqual(release.version(), "0.1.0")
         with self.assertRaises(ValueError):

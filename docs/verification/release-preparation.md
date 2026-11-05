@@ -12,7 +12,7 @@ Local checks:
 
 - Rust workspace tests, doctest, examples, formatting, and Clippy pass on
   Windows/Linux; the original Rust 1.89 minimum remains covered by CI.
-- Nine Python/binding/release checks pass on Windows, including the documented
+- Ten Python/binding/release checks pass on Windows, including the documented
   CLI batch/script fixtures and checksum tampering/incomplete-matrix refusal.
 - The Python example's preview/commit/idempotence/rollback assertions pass.
 - Windows wheel/sdist metadata passes `twine check --strict`; source installation
