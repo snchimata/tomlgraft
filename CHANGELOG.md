@@ -1,6 +1,6 @@
 # Changelog
 
-## [0.1.1] - Unreleased
+## [0.1.1] - 2026-11-05
 
 Documentation and package metadata update; editing behavior is unchanged.
 

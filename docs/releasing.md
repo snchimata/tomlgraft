@@ -1,6 +1,6 @@
 # Releasing tomlgraft
 
-Prepared version: **0.1.1**, documentation patch release. No package or GitHub
+Published version: **0.1.1**, documentation patch release. No package or GitHub
 release is published by opening a PR, merging it, or pushing a tag. The release
 workflow is manual, and each destination is off by default.
 
